@@ -1,0 +1,71 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{longtable}
+\newcommand*{\thead}[1]{\multicolumn{1}{c}{\bfseries #1}}
+\author{Vũ Ngọc Binh}
+\begin{document}
+	\begin{center}
+		\textbf{\huge Giáo án mẫu}
+	\end{center}
+	\section{Mục tiêu bài học}
+	Sau khi học bài học này, học sinh sẽ:
+	\subsection{Về kiến thức}
+	\begin{itemize}
+		\item Đây là một mục tiêu về kiến thức
+	\end{itemize}
+	\subsection{Về kĩ năng}
+	\begin{itemize}
+		\item Đây là một mục tiêu về kĩ năng
+	\end{itemize}
+	\subsection{Về thái độ}
+	\begin{itemize}
+		\item Đây là một mục tiêu về kĩ năng
+	\end{itemize}
+	\section{Chuẩn bị của giáo viên và học sinh}
+	\subsection{Chuẩn bị của giáo viên}
+	Bạn đã chuẩn bị những gì trước khi đến lớp ?
+	\subsection{Chuẩn bị của học sinh}
+	Học sinh cần chuẩn bị những gì trước khi nghe bạn giảng bài ?
+	\section{Các phương pháp dạy học}
+	Liệt kê các phương pháp dạy học tại đây.
+	\section{Tiến trình bài học}
+	\subsection{Hoạt động 1: Hoạt động vui chơi giải trí (45 phút)}
+	\begin{longtable}{ p{0.3\linewidth} p{0.3\linewidth} p{0.4\linewidth} }
+		\toprule
+		\thead{Hoạt động của GV}
+		& 
+		\thead{Hoạt động của HS}
+		& 
+		\thead{Ghi bảng - trình chiếu}
+		\\ \midrule
+		\endhead
+		Giáo viên làm gì đầu tiên
+		&
+		Học sinh làm gì đầu tiên
+		&  
+		% Tham số thử 3 của multirow luôn là *
+		\multirow[t]{3}{*}{
+			Bạn muốn ghi cái gì lên bảng ?
+		}
+		\\
+		Giáo viên làm gì tiếp theo
+		& 
+		Học sinh làm gì tiếp theo
+		&  
+		\\
+		Cuối cùng giáo viên làm gì
+		&
+		Cuối cùng học sinh làm gì
+		&
+		\\ \bottomrule
+	\end{longtable}
+\end{document}
