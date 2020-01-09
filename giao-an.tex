@@ -10,11 +10,15 @@
 \usepackage{multirow}
 \usepackage{array}
 \usepackage{longtable}
-\newcommand*{\thead}[1]{\multicolumn{1}{c}{\bfseries #1}}
+\usepackage[left=3cm, right=3cm, top=2cm, bottom=3cm]{geometry}
+\usepackage{titlesec}
+\titlelabel{\thetitle. }
+\usepackage{makecell}
+\renewcommand\theadfont{\bfseries}
 \author{Vũ Ngọc Binh}
 \begin{document}
 	\begin{center}
-		\textbf{\huge Giáo án mẫu}
+		\textbf{\LARGE Giáo án mẫu}
 	\end{center}
 	\section{Mục tiêu bài học}
 	Sau khi học bài học này, học sinh sẽ:
@@ -39,33 +43,34 @@
 	Liệt kê các phương pháp dạy học tại đây.
 	\section{Tiến trình bài học}
 	\subsection{Hoạt động 1: Hoạt động vui chơi giải trí (45 phút)}
-	\begin{longtable}{ p{0.3\linewidth} p{0.3\linewidth} p{0.4\linewidth} }
-		\toprule
+	\begin{longtable}{ | p{0.3\linewidth} | p{0.3\linewidth} | p{0.4\linewidth} | }
+		\hline
+		\endfoot
+		\hline
 		\thead{Hoạt động của GV}
 		& 
 		\thead{Hoạt động của HS}
 		& 
 		\thead{Ghi bảng - trình chiếu}
-		\\ \midrule
+		\\ \hline
 		\endhead
 		Giáo viên làm gì đầu tiên
 		&
 		Học sinh làm gì đầu tiên
 		&  
-		% Tham số thử 3 của multirow luôn là *
-		\multirow[t]{3}{*}{
-			Bạn muốn ghi cái gì lên bảng ?
-		}
-		\\ \cmidrule{1-2}
+		Ghi nội dung lên bảng
+		\\ \hline
 		Giáo viên làm gì tiếp theo
 		& 
 		Học sinh làm gì tiếp theo
-		&  
-		\\ \cmidrule{1-2}
+		&
+		Ghi nội dung lên bảng
+		\\ \hline
 		Cuối cùng giáo viên làm gì
 		&
 		Cuối cùng học sinh làm gì
 		&
-		\\ \bottomrule
+		Ghi nội dung lên bảng
+		\\ \hline
 	\end{longtable}
 \end{document}
