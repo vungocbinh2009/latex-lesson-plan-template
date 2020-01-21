@@ -15,6 +15,14 @@
 \titlelabel{\thetitle. }
 \usepackage{makecell}
 \renewcommand\theadfont{\bfseries}
+% Các môi trường dùng để gõ bài tập
+\newtheorem{baitap}{Bài tập}
+\newtheorem{loigiai}{Lời giải bài tập}
+
+% Tạo dòng kẻ chấm.
+\usepackage{setspace}
+\def\dotfill#1{\cleaders\hbox to #1{.}\hfill}
+\newcommand\dotline[2][.5em]{\leavevmode\hbox to #2{\dotfill{#1}\hfil}}
 \author{Vũ Ngọc Binh}
 \begin{document}
 	\begin{center}
@@ -87,4 +95,28 @@
 		Ghi nội dung lên bảng
 		\\ \hline
 	\end{longtable}
+
+	\section{Phụ lục}
+	\subsection{Phiếu bài tập}
+	Ghi nội dung phiếu bài tập vào đây, sử dụng môi trường baitap
+	\begin{baitap}
+		Ghi bài tập vào đây
+	\end{baitap}
+	\subsection{Nội dung phiếu bài tập}
+	Ghi nội dung lời giải các bài tập vào đây, sử dụng môi trường loigiai
+	\begin{loigiai}
+		\hfill
+		
+		Ghi lời giải tại đây
+	\end{loigiai}
+
+	\section{Rút kinh nghiệm}
+	{\setstretch{2.0}
+		\dotline{\linewidth}
+		\dotline{\linewidth}
+		\dotline{\linewidth}
+		\dotline{\linewidth}
+		\dotline{\linewidth}
+		\par
+	}
 \end{document}
