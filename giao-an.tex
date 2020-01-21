@@ -9,7 +9,8 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{array}
-\usepackage{longtable}
+\usepackage{ltablex}
+\keepXColumns
 \usepackage[left=3cm, right=3cm, top=2cm, bottom=3cm]{geometry}
 \usepackage{titlesec}
 \titlelabel{\thetitle. }
@@ -28,7 +29,7 @@
 	\begin{center}
 		\textbf{\LARGE Giáo án mẫu}
 	\end{center}
-	\begin{tabular}{ m{0.5\linewidth} m{0.5\linewidth} }
+	\begin{tabularx}{\linewidth}{ m{0.5\linewidth} X }
 		Ngày soạn: a/b/c
 		& 
 		Tiết: d
@@ -41,7 +42,7 @@
 		& 
 		Lớp: f
 		\\
-	\end{tabular}
+	\end{tabularx}
 	\section{Mục tiêu bài học}
 	Sau khi học bài học này, học sinh sẽ:
 	\subsection{Về kiến thức}
@@ -65,7 +66,7 @@
 	Liệt kê các phương pháp dạy học tại đây.
 	\section{Tiến trình bài học}
 	\subsection{Hoạt động 1: Hoạt động vui chơi giải trí (45 phút)}
-	\begin{longtable}{ | p{0.3\linewidth} | p{0.3\linewidth} | p{0.4\linewidth} | }
+	\begin{tabularx}{\linewidth}{ | p{0.28\linewidth} | p{0.28\linewidth} | X | }
 		\hline
 		\endfoot
 		\hline
@@ -94,7 +95,7 @@
 		&
 		Ghi nội dung lên bảng
 		\\ \hline
-	\end{longtable}
+	\end{tabularx}
 
 	\section{Phụ lục}
 	\subsection{Phiếu bài tập}
