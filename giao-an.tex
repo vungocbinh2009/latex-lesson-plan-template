@@ -9,9 +9,11 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{array}
-\usepackage{ltablex}
-\keepXColumns
-\usepackage[left=3cm, right=3cm, top=2cm, bottom=3cm]{geometry}
+\usepackage{longtable}
+% Gõ bài tập trắc nghiệm
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=3cm]{geometry}
 \usepackage{titlesec}
 \titlelabel{\thetitle. }
 \usepackage{makecell}
@@ -29,7 +31,10 @@
 	\begin{center}
 		\textbf{\LARGE Giáo án mẫu}
 	\end{center}
-	\begin{tabularx}{\linewidth}{ m{0.5\linewidth} X }
+	\begin{tabular} {
+		m{\dimexpr0.5\linewidth-2\tabcolsep\relax}
+		m{\dimexpr0.5\linewidth-2\tabcolsep\relax} 
+	}
 		Ngày soạn: a/b/c
 		& 
 		Tiết: d
@@ -42,7 +47,7 @@
 		& 
 		Lớp: f
 		\\
-	\end{tabularx}
+	\end{tabular}
 	\section{Mục tiêu bài học}
 	Sau khi học bài học này, học sinh sẽ:
 	\subsection{Về kiến thức}
@@ -58,17 +63,18 @@
 		\item Đây là một mục tiêu về kĩ năng
 	\end{itemize}
 	\section{Chuẩn bị của giáo viên và học sinh}
-	\subsection{Chuẩn bị của giáo viên}
-	Bạn đã chuẩn bị những gì trước khi đến lớp ?
-	\subsection{Chuẩn bị của học sinh}
-	Học sinh cần chuẩn bị những gì trước khi nghe bạn giảng bài ?
+	\begin{itemize}
+		\item Giáo viên:
+		\item Học sinh:
+	\end{itemize}
 	\section{Các phương pháp dạy học}
-	Liệt kê các phương pháp dạy học tại đây.
+	\begin{itemize}
+		\item Phương pháp 1
+		\item Phương pháp 2
+	\end{itemize}
 	\section{Tiến trình bài học}
 	\subsection{Hoạt động 1: Hoạt động vui chơi giải trí (45 phút)}
-	\begin{tabularx}{\linewidth}{ | p{0.28\linewidth} | p{0.28\linewidth} | X | }
-		\hline
-		\endfoot
+	\begin{longtable}{ | p{0.28\linewidth} | p{0.28\linewidth}  | p{\dimexpr0.44\linewidth-6\tabcolsep-4\arrayrulewidth\relax} | }
 		\hline
 		\thead{Hoạt động của GV}
 		& 
@@ -77,25 +83,13 @@
 		\thead{Ghi bảng - trình chiếu}
 		\\ \hline
 		\endhead
-		Giáo viên làm gì đầu tiên
+		Giáo viên sẽ làm gì ?
 		&
-		Học sinh làm gì đầu tiên
+		Học sinh cần làm gì ?
 		&  
-		Ghi nội dung lên bảng
+		Ghi nội dung lên bảng.
 		\\ \hline
-		Giáo viên làm gì tiếp theo
-		& 
-		Học sinh làm gì tiếp theo
-		&
-		Ghi nội dung lên bảng
-		\\ \hline
-		Cuối cùng giáo viên làm gì
-		&
-		Cuối cùng học sinh làm gì
-		&
-		Ghi nội dung lên bảng
-		\\ \hline
-	\end{tabularx}
+	\end{longtable}
 
 	\section{Phụ lục}
 	\subsection{Phiếu bài tập}
