@@ -1,0 +1,17 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[shortlabels]{enumitem}
+\author{Vũ Ngọc Binh}
+\begin{document}
+	\begin{center}
+		{\Large \textbf{Tóm tắt lý thuyết}}
+		
+		{\large Nội dung lý thuyết}
+	\end{center}
+\section{Định nghĩa}
+\section{Tính chất}
+\end{document}
