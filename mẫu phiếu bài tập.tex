@@ -5,16 +5,54 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage[shortlabels]{enumitem}
 \author{Vũ Ngọc Binh}
+
+% Căn lề văn bản
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+% Không đánh số trang
 \pagestyle{empty}
+% Không lùi dòng các đoạn văn
+\setlength\parindent{0pt}
+% Môi trường dùng để gõ bài tập
 \newtheorem{baitap}{Bài tập}
+% Môi trường ghi phương pháp giải bài tập (được đóng khung)
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+
+\newtcbtheorem{ppgiai}{Bài toán}%
+{colback=white,colframe=black,fonttitle=\bfseries}{th}
+% Dùng để đánh số các dạng toán trong tài liệu.
+\makeatletter
+\newcounter{dangtoan}
+\newcommand\dangtoan%
+{\@startsection%
+	{dangtoan}%
+	{1}
+	{0pt}%
+	{-3.5ex \@plus -1ex \@minus -.2ex}%
+	{2.3ex \@plus.2ex}%
+	{\normalfont\large\textbf}
+}
+% Tránh lặp lại tiêu đề
+\newcommand\dangtoanmark[1]{}
+\makeatother
+
 \begin{document}
 	\begin{center}
 		{\Large \textbf{Phiếu bài tập}}
+		
+		{\large Nội dung phiếu bài tập}
 	\end{center}
+
+\dangtoan{Dạng toán 1 là đây}
+
+\begin{ppgiai}{Bài toán dễ}{}
+	Phương pháp giải dạng toán 1.
+\end{ppgiai}
 
 \begin{baitap}
 	Gõ bài tập vào đây
