@@ -20,6 +20,25 @@ File này được viết ra để tự động hóa việc xây dựng đáp á
 
 ## Cách sử dụng
 
+0. Tải về các thư viện cần thiết:
+```{r}
+# Install devtools
+install.packages("devtools")
+# Install thongke before thongke_dapan
+devtools::install_github("vungocbinh2009/thongke")
+# Install thongke.dapan
+devtools::install_github("vungocbinh2009/thongke_dapan")
+# 2 thư viện này có dependency là whisker, nên không cần tải whisker nữa.
+install.packages("magrittr")
+install.packages("stringr")
+
+library(thongke.dapan)
+library(thongke)
+library(whisker)
+library(magrittr)
+library(stringr)
+```
+
 1. Lấy đề thi và dùng thư viện thongke.dapan để giải (Có thể thêm đề thi vào đây luôn cho tiện theo dõi)
 ```{r}
 # Đặt tên các câu hỏi ở đây
