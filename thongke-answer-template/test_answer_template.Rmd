@@ -1,0 +1,77 @@
+---
+title: "Mẫu viết đề thi thống kê bằng thongke.dapan"
+author: "Vũ Ngọc Bình"
+date: "11/26/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(thongke.dapan)
+library(thongke)
+library(whisker)
+library(magrittr)
+library(stringr)
+```
+
+## Mục đích viết file này
+
+File này được viết ra để tự động hóa việc xây dựng đáp án của một đề thi môn xác suất thống kê, sử dụng thongke.dapan và mẫu đáp án hiện có trên github. Ưu điểm của việc này là giúp giảm bớt sai số trong tính toán và tiết kiệm được nhiều công sức
+
+## Cách sử dụng
+
+1. Lấy đề thi và dùng thư viện thongke.dapan để giải (Có thể thêm đề thi vào đây luôn cho tiện theo dõi)
+```{r}
+# Đặt tên các câu hỏi ở đây
+questions <- c("Câu 1", "Câu 2", "Câu 3", "Câu 4", "Câu 5") %>% sprintf("\\textbf{%s}", .)
+
+# Danh sách các câu trả lời, tương ứng với từng câu hỏi
+answers <- c(
+    # Câu 1
+    answer_estimate_mean_t(mean = 39.8, alpha = 0.01, n = 15, s = sqrt(0.144)),
+    # Câu 2
+    answer_estimate_var(n = 30, s = 0.032, alpha = 0.025),
+    # Câu 3
+    answer_estimate_prop(n = 100, f = 0.6, alpha = 0.1),
+    # Câu 4
+    answer_sample_size_mean(sigma = 3, alpha = get_alpha(1.64), eps = 0.5),
+    # Câu 5
+    answer_sample_size_prop_1(f = 0.64, alpha = get_alpha(1.64), eps = 0.02)
+)
+```
+
+2. Đặt tên file tex ở đây
+```{r}
+output_file = "output.tex"
+```
+3. Bấm nút knit (phím tắt Ctrl + Shift + K) để đoạn code dưới đây làm nốt những công việc còn lại và tạo ra file tex
+
+4. Chỉnh sửa lại file tex để có đáp án đề thi: Các mục cần lưu ý để sửa bao gồm:
+  - Phần tiêu đề
+  - Một số nội dung trong từng đáp án.
+```{r}
+answer_list_template <- readLines("https://raw.githubusercontent.com/vungocbinh2009/latex-lesson-plan-template/master/thongke-answer-template/answer_list_template.mustache")
+answer_template <- readLines("https://raw.githubusercontent.com/vungocbinh2009/latex-lesson-plan-template/master/thongke-answer-template/answer_template.mustache")
+rendered_answer_list = NULL
+for(i in seq_along(questions)) {
+  data <- list(
+    question = questions[i],
+    answer = answers[i]
+  )
+  rendered_answer <- whisker.render(answer_template, data)
+  rendered_answer <- str_replace_all(rendered_answer, "\n\t\t", "\n")
+  rendered_answer <- str_replace_all(rendered_answer, "\n", "\n\t\t")
+  rendered_answer_list <- c(rendered_answer_list, rendered_answer)
+}
+print(rendered_answer_list)
+
+data <- list(
+  answer_list = iteratelist(rendered_answer_list)
+)
+
+rendered_exam <- whisker.render(answer_list_template, data)
+writeLines(rendered_exam, output_file)
+```
+
+
+
